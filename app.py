@@ -17,11 +17,11 @@ list_of_columns =['code', 'state', 'category', 'total exports', 'beef', 'pork', 
        'veggies proc', 'total veggies', 'corn', 'wheat', 'cotton']
 
 mycolumn='fruits fresh'
-myheading1 = f"Wow! That's a lot of {mycolumn}!"
+myheading1 = f"Wow! That's a lot of {list_of_columns}!"
 mygraphtitle = 'Interactive 2011 US Agriculture Exports by State'
 mycolorscale = 'ylorrd' # Note: The error message will list possible color scales.
 mycolorbartitle = "Millions USD"
-tabtitle = 'Old McDonald'
+tabtitle = 'US Agriculture'
 sourceurl = 'https://plot.ly/python/choropleth-maps/'
 githublink = 'https://github.com/austinlasseter/dash-map-usa-agriculture'
 
@@ -43,7 +43,7 @@ app.layout = html.Div(children=[
     html.H1(myheading1),
     html.Div([
         html.Div([
-                html.H6('Select a variable of your choosing:'),
+                html.H6('Select a commodity of your choosing:'),
                 dcc.Dropdown(
                     id='options-drop',
                     options=[{'label': i, 'value': i} for i in list_of_columns],
